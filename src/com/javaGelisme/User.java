@@ -1,5 +1,6 @@
 package com.javaGelisme;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -13,6 +14,9 @@ public class User {
     private List<Adress> adressList;
     private Date lastLoginDate;
 
+    public User() {
+        adressList = new ArrayList<Adress>();
+    }
 
     public String getName() {
         return name;
