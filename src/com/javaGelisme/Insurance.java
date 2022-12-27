@@ -7,5 +7,5 @@ public abstract class Insurance {
     private Double insurancePrice;
     private Date startEndInsurance;
 
-    public abstract void calculate();
+    public abstract double calculate();
 }
