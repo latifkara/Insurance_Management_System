@@ -6,6 +6,7 @@ import java.util.List;
 public abstract class Account {
     User user = new User();
     List<Insurance> insurances = new ArrayList<Insurance>();
+
     public final void showUserInfo(){
         System.out.println("İsim : "+ user.getName()+
                             "Soyismi : "+ user.getSurname()+
@@ -18,5 +19,14 @@ public abstract class Account {
     public void authenticationStatus(){
 
     }
+
+
+    public void addAdress(){
+
+    }
+
+    public abstract void insurancePolicy();
+
+
 
 }
