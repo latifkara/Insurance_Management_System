@@ -14,6 +14,14 @@ public class User {
     private List<Adress> adressList;
     private Date lastLoginDate;
 
+    public List<Adress> getAdressList() {
+        return adressList;
+    }
+
+    public void setAdressList(List<Adress> adressList) {
+        this.adressList = adressList;
+    }
+
     public User() {
         adressList = new ArrayList<Adress>();
     }
