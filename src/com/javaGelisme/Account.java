@@ -4,8 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Account {
-    User user = new User();
+    User user;
     List<Insurance> insurances = new ArrayList<Insurance>();
+
+    public Account(User user) {
+        this.user = user;
+    }
 
     public final void showUserInfo(){
         System.out.println("İsim : "+ user.getName()+
@@ -16,14 +20,15 @@ public abstract class Account {
                             "Yaş : "+ user.getAge());
     }
 
-    public void authenticationStatus(){
-
+    public  AuthenticationStatus authenticationStatus(String email, String pass) throws InvalidAuthenticationException{
+        if (user.getEmail().equals(email) && user.getPassword().equals(pass)){
+            return AuthenticationStatus.SUCCESS;
+        }else{
+            throw  new InvalidAuthenticationException("kullanıcı bulunmadı");
+        }
     }
 
 
-    public void addAdress(){
-
-    }
 
     public abstract void insurancePolicy();
 

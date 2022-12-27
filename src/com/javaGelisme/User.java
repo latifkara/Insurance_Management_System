@@ -14,12 +14,15 @@ public class User {
     private List<Adress> adressList;
     private Date lastLoginDate;
 
-    public List<Adress> getAdressList() {
-        return adressList;
-    }
 
-    public void setAdressList(List<Adress> adressList) {
-        this.adressList = adressList;
+    public User(String name, String surname, String email, String password, String job, int age) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        Password = password;
+        this.job = job;
+        this.age = age;
+        this.adressList = new ArrayList<Adress>();
     }
 
     public User() {
@@ -72,5 +75,13 @@ public class User {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public List<Adress> getAdressList() {
+        return adressList;
+    }
+
+    public void setAdressList(List<Adress> adressList) {
+        this.adressList = adressList;
     }
 }
