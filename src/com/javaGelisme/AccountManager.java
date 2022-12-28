@@ -5,40 +5,48 @@ import java.util.TreeSet;
 
 public class AccountManager {
     Scanner scanner = new Scanner(System.in);
-    TreeSet<Account> accounts = new TreeSet<Account>();
+    AccountComparable comparable = new AccountComparable();
+    TreeSet<Account> accounts = new TreeSet<Account>(comparable);
 
-    public void login(){
-        System.out.print("Lütfen kullanıcı ismi giriniz : ");
+    public AuthenticationStatus login(){
+        System.out.println("-------------Lutfen Giris Yapin----------------");
+        System.out.print("Lutfen kullanici ismi giriniz : ");
         String username = scanner.next();
-        System.out.print("Lütfen kullanıcı şifresini giriniz : ");
+        System.out.print("Lutfen kullanici sifresini giriniz : ");
         String password = scanner.next();
-
-        for (Account account:accounts) {
-            try {
-            account.authenticationStatus(username, password);
-            } catch (InvalidAuthenticationException e) {
-                e.printStackTrace();
+        AuthenticationStatus status;
+        try {
+            for (Account account:accounts) {
+               if (account.user.getName().equals(username) && account.user.getPassword().equals(password)){
+                   System.out.println("giris basarili");
+                   return AuthenticationStatus.SUCCESS;
+               }
             }
+            throw new InvalidAuthenticationException("Öğrenci bulunmadı");
+        } catch (InvalidAuthenticationException e) {
+            e.getMessage();
         }
+        return AuthenticationStatus.FAIL;
     }
 
     public void signIn(){
         String adduser;
         do {
-            System.out.print("Kullanıcı ismini giriniz :");
+            System.out.println("-------------Lutfen Kayit Yapin----------------");
+            System.out.print("Kullanici ismini giriniz :");
             String username = scanner.next();
-            System.out.print("Kullanıcı soyadını giriniz :");
+            System.out.print("Kullanici soyadini giriniz :");
             String userSurname = scanner.next();
-            System.out.print("Kullanıcı emailini giriniz :");
+            System.out.print("Kullanici emailini giriniz :");
             String email = scanner.next();
-            System.out.print("Kullanıcı şifresini giriniz :");
+            System.out.print("Kullanici Sifresini giriniz :");
             String password = scanner.next();
-            System.out.print("Kullanıcı mesleğini giriniz :");
+            System.out.print("Kullanici meslegini giriniz :");
             String job = scanner.next();
-            System.out.print("Kullanıcı yaşını giriniz :");
+            System.out.print("Kullanici yasini giriniz :");
             int age = scanner.nextInt();
             User newUser = new User(username, userSurname, email, password, job, age);
-            System.out.println("1. Kurumsal Hesap" +
+            System.out.println("1. Kurumsal Hesap" +" "+
                     "2. Bireysel Hesap");
             int select = scanner.nextInt();
             switch (select) {

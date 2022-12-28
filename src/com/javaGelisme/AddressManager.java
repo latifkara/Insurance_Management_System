@@ -11,7 +11,7 @@ public class AddressManager {
     }
     public static void addItem(){
         System.out.println("1. Ev adresi "+
-                            "2. iş yeri adresi");
+                            "2. is yeri adresi");
         int select = scanner.nextInt();
         switch (select){
             case 1:
@@ -27,7 +27,7 @@ public class AddressManager {
     }
 
     public static void deleteItem(){
-        System.out.println("Silmek istediğiniz Adresi giriniz ");
+        System.out.println("Silmek istediginiz Adresi giriniz ");
         int address = scanner.nextInt();
         user.getAdressList().remove(address-1);
 

@@ -12,21 +12,20 @@ public abstract class Account {
     }
 
     public final void showUserInfo(){
-        System.out.println("İsim : "+ user.getName()+
+        System.out.println("Isim : "+ user.getName()+
                             "Soyismi : "+ user.getSurname()+
                             "email :: "+ user.getEmail()+
-                            "Şifre : "+ user.getPassword()+
+                            "Sifre : "+ user.getPassword()+
                             "Meslek : "+ user.getJob()+
-                            "Yaş : "+ user.getAge());
+                            "Yas : "+ user.getAge());
     }
 
-    public  AuthenticationStatus authenticationStatus(String email, String pass) throws InvalidAuthenticationException{
+  /*  public  AuthenticationStatus authenticationStatus(String email, String pass) throws InvalidAuthenticationException {
         if (user.getEmail().equals(email) && user.getPassword().equals(pass)){
             return AuthenticationStatus.SUCCESS;
-        }else{
-            throw  new InvalidAuthenticationException("kullanıcı bulunmadı");
         }
-    }
+        throw new InvalidAuthenticationException("Öğrenci bulunmadı");
+    }*/
 
 
 
