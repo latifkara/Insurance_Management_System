@@ -13,18 +13,20 @@ public abstract class Account {
 
     public final void showUserInfo(){
         System.out.println("Isim : "+ user.getName()+"-"+
-                            "Soyismi : "+ user.getSurname()+"-"+
-                            "email :: "+ user.getEmail()+"-"+
-                            "Sifre : "+ user.getPassword()+"-"+
-                            "Meslek : "+ user.getJob()+"-"+
-                            "Yas : "+ user.getAge()+"-"+
+                            "Soyismi : "+ user.getSurname()+" - "+
+                            "email :: "+ user.getEmail()+" - "+
+                            "Sifre : "+ user.getPassword()+" - "+
+                            "Meslek : "+ user.getJob()+" -  "+
+                            "Yas : "+ user.getAge()+" - "+
                             "Saat Bilgisi : "+ user.getLastLoginDate().toString()+"-"+
-                            "Sigorta Policasi : " + this.insurancePolicy()+"-"+
-                            "Sigorta Bilgileri"+" --> ");
+                            "Sigorta Policasi : " + this.insurancePolicy()+"\n"
+                            );
+
+        System.out.println("Sigorta Bilgileri"+" --> ");
         for (Insurance ins:insurances) {
-            System.out.println(ins.getInsurancename()+ "-"+
-                               ins.getInsurancePrice()+"-"+
-                               ins.getStartEndInsurance()+"-"+
+            System.out.println(ins.getInsurancename()+ " - "+
+                               ins.getInsurancePrice()+" - "+
+                               ins.getStartEndInsurance()+" - "+
                                ins.calculate());
         }
     }
