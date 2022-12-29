@@ -59,7 +59,7 @@ public class AccountManager {
                     accounts.add(individual);
                     break;
             }
-            System.out.println("yeni kullanıcı eklemek ister misiniz --> <e>vet <h>ayır");
+            System.out.println("yeni kullanici eklemek ister misiniz --> <e>vet <h>ayir");
             adduser = scanner.next();
         }while (adduser.equals("e"));
     }

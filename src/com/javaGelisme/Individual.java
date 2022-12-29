@@ -7,7 +7,7 @@ public class Individual extends Account{
     }
 
     @Override
-    public void insurancePolicy() {
-
+    public double insurancePolicy() {
+        return 10;
     }
 }

@@ -6,7 +6,7 @@ public class Enterprise extends Account{
     }
 
     @Override
-    public void insurancePolicy() {
-
+    public double insurancePolicy() {
+        return 20;
     }
 }
