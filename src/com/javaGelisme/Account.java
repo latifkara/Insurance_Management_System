@@ -18,7 +18,15 @@ public abstract class Account {
                             "Sifre : "+ user.getPassword()+"-"+
                             "Meslek : "+ user.getJob()+"-"+
                             "Yas : "+ user.getAge()+"-"+
-                            "Sigorta Policasi : " + this.insurancePolicy());
+                            "Saat Bilgisi : "+ user.getLastLoginDate().toString()+"-"+
+                            "Sigorta Policasi : " + this.insurancePolicy()+"-"+
+                            "Sigorta Bilgileri"+" --> ");
+        for (Insurance ins:insurances) {
+            System.out.println(ins.getInsurancename()+ "-"+
+                               ins.getInsurancePrice()+"-"+
+                               ins.getStartEndInsurance()+"-"+
+                               ins.calculate());
+        }
     }
 
     public abstract double insurancePolicy();

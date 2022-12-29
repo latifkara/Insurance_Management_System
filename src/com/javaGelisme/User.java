@@ -14,14 +14,14 @@ public class User {
     private List<Adress> adressList;
     private Date lastLoginDate;
 
-
-    public User(String name, String surname, String email, String password, String job, int age) {
+    public User(String name, String surname, String email, String password, String job, int age, Date lastLoginDate) {
         this.name = name;
         this.surname = surname;
         this.email = email;
         Password = password;
         this.job = job;
         this.age = age;
+        this.lastLoginDate = lastLoginDate;
         this.adressList = new ArrayList<Adress>();
     }
 
@@ -83,5 +83,12 @@ public class User {
 
     public void setAdressList(List<Adress> adressList) {
         this.adressList = adressList;
+    }
+    public Date getLastLoginDate() {
+        return lastLoginDate;
+    }
+
+    public void setLastLoginDate(Date lastLoginDate) {
+        this.lastLoginDate = lastLoginDate;
     }
 }
